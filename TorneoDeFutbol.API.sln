@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoDeFutbol.API", "TorneoDeFutbol.API\TorneoDeFutbol.API.csproj", "{7D9D4E10-A35B-4970-90D2-111AA48D2996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoDeFutbol.Application", "TorneoDeFutbol.Application\TorneoDeFutbol.Application.csproj", "{68977D15-36CB-4F72-B091-5A03CD72C310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoDeFutbol.Domain", "TorneoDeFutbol.Domain\TorneoDeFutbol.Domain.csproj", "{A5788466-D7D0-492D-867C-49595D8FC136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorneoDeFutbol.Infrastructure", "TorneoDeFutbol.Infrastructure\TorneoDeFutbol.Infrastructure.csproj", "{52D604E1-4276-4B55-BD1B-4B6870E936C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3C6DDAD0-F7DC-4BBD-9E1E-CCFD0BE38A2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1DFCA44-0F3D-43E3-BC03-B783564D8DEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D9D4E10-A35B-4970-90D2-111AA48D2996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D9D4E10-A35B-4970-90D2-111AA48D2996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D9D4E10-A35B-4970-90D2-111AA48D2996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D9D4E10-A35B-4970-90D2-111AA48D2996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68977D15-36CB-4F72-B091-5A03CD72C310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68977D15-36CB-4F72-B091-5A03CD72C310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68977D15-36CB-4F72-B091-5A03CD72C310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68977D15-36CB-4F72-B091-5A03CD72C310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5788466-D7D0-492D-867C-49595D8FC136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5788466-D7D0-492D-867C-49595D8FC136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5788466-D7D0-492D-867C-49595D8FC136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5788466-D7D0-492D-867C-49595D8FC136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D604E1-4276-4B55-BD1B-4B6870E936C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D604E1-4276-4B55-BD1B-4B6870E936C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D604E1-4276-4B55-BD1B-4B6870E936C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D604E1-4276-4B55-BD1B-4B6870E936C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D9D4E10-A35B-4970-90D2-111AA48D2996} = {B1DFCA44-0F3D-43E3-BC03-B783564D8DEB}
+		{68977D15-36CB-4F72-B091-5A03CD72C310} = {B1DFCA44-0F3D-43E3-BC03-B783564D8DEB}
+		{A5788466-D7D0-492D-867C-49595D8FC136} = {B1DFCA44-0F3D-43E3-BC03-B783564D8DEB}
+		{52D604E1-4276-4B55-BD1B-4B6870E936C2} = {B1DFCA44-0F3D-43E3-BC03-B783564D8DEB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D902FB3F-8B7D-4A16-AF00-CB3D8504B087}
+	EndGlobalSection
+EndGlobal
