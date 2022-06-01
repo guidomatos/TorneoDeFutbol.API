@@ -1,32 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using TorneoDeFutbol.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using TorneoDeFutbol.Domain;
 
 namespace TorneoDeFutbol.Infrastructure.Context
 {
-    public partial class TorneoDeFutbolContext : DbContext
+    public partial class TorneoDeFutbolDbContext : DbContext
     {
-        public TorneoDeFutbolContext()
+        public TorneoDeFutbolDbContext()
         {
         }
 
-        public TorneoDeFutbolContext(DbContextOptions<TorneoDeFutbolContext> options)
+        public TorneoDeFutbolDbContext(DbContextOptions<TorneoDeFutbolDbContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Equipo> Equipos { get; set; } = null!;
+        public virtual DbSet<Profesion> Profesions { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=localhost; Database=TorneoDeFutbol; Integrated Security=yes;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +35,15 @@ namespace TorneoDeFutbol.Infrastructure.Context
 
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Profesion>(entity =>
+            {
+                entity.ToTable("Profesion");
+
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 

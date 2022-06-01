@@ -11,11 +11,12 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddInfrastuctureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<TorneoDeFutbolContext> (options =>
+        services.AddDbContext<TorneoDeFutbolDbContext> (options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")
         ));
 
         services.AddTransient<IEquipoService, EquipoService>();
+        services.AddTransient<IProfesionService, ProfesionService>();
 
         return services;
     }

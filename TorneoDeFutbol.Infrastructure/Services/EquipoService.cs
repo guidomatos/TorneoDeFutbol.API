@@ -7,10 +7,10 @@ namespace TorneoDeFutbol.Infrastructure.Services
 {
     public class EquipoService : IEquipoService
     {
-        private readonly TorneoDeFutbolContext _context;
+        private readonly TorneoDeFutbolDbContext _context;
         public EquipoService
         (
-            TorneoDeFutbolContext context
+            TorneoDeFutbolDbContext context
         )
         {
             _context = context;
