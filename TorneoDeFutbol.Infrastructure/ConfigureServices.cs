@@ -17,6 +17,7 @@ public static class ConfigureServices
 
         services.AddTransient<IEquipoService, EquipoService>();
         services.AddTransient<IProfesionService, ProfesionService>();
+        services.AddTransient<ITorneoService, TorneoService>();
 
         return services;
     }

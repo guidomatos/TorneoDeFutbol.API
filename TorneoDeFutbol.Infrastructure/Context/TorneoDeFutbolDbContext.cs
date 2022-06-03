@@ -20,7 +20,7 @@ namespace TorneoDeFutbol.Infrastructure.Context
 
         public virtual DbSet<Equipo> Equipos { get; set; } = null!;
         public virtual DbSet<Profesion> Profesions { get; set; } = null!;
-
+        public virtual DbSet<Torneo> Torneos { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,37 @@ namespace TorneoDeFutbol.Infrastructure.Context
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
+
+            modelBuilder.Entity<TipoTorneo>(entity =>
+            {
+                entity.ToTable("TipoTorneo");
+
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Torneo>(entity =>
+            {
+                entity.ToTable("Torneo");
+
+                entity.Property(e => e.FechaFin).HasColumnType("datetime");
+
+                entity.Property(e => e.FechaInicio).HasColumnType("datetime");
+
+                entity.Property(e => e.Nombre)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.TipoTorneo)
+                    .WithMany(p => p.Torneos)
+                    .HasForeignKey(d => d.TipoTorneoId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("R_37");
+            });
+
+            OnModelCreatingPartial(modelBuilder);
+
 
             OnModelCreatingPartial(modelBuilder);
         }
