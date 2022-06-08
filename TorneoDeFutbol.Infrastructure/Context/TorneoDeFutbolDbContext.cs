@@ -68,14 +68,19 @@ namespace TorneoDeFutbol.Infrastructure.Context
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.TipoTorneo)
+                entity.HasMany(d => d.Equipos)
                     .WithMany(p => p.Torneos)
-                    .HasForeignKey(d => d.TipoTorneoId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("R_37");
-            });
+                    .UsingEntity<Dictionary<string, object>>(
+                        "TorneoEquipo",
+                        l => l.HasOne<Equipo>().WithMany().HasForeignKey("EquipoId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("R_33"),
+                        r => r.HasOne<Torneo>().WithMany().HasForeignKey("TorneoId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("R_31"),
+                        j =>
+                        {
+                            j.HasKey("TorneoId", "EquipoId").HasName("XPKTorneoEquipo");
 
-            OnModelCreatingPartial(modelBuilder);
+                            j.ToTable("TorneoEquipo");
+                        });
+            });
 
 
             OnModelCreatingPartial(modelBuilder);

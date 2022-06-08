@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TorneoDeFutbol.Application.EquipoFutbol.Commands.CrearEquipo;
+using TorneoDeFutbol.Application.ProfesionFutbol.Queries.ObtenerEquipos;
 using TorneoDeFutbol.Domain;
+using TorneoDeFutbol.Domain.Entities;
 
 namespace TorneoDeFutbol.API.Controllers;
 
@@ -24,5 +26,9 @@ public class EquipoController : Controller
     {
         return await _mediator.Send(command);
     }
+
+    [HttpGet]
+    public async Task<IEnumerable<Equipo>> Get()
+        => await _mediator.Send(new ObtenerEquiposQuery());
 
 }

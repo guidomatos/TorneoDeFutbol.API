@@ -1,4 +1,5 @@
 ﻿using TorneoDeFutbol.Domain;
+using TorneoDeFutbol.Domain.Entities;
 
 namespace TorneoDeFutbol.Application.Common.Interfaces;
 

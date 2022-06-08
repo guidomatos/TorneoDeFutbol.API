@@ -23,5 +23,9 @@ namespace TorneoDeFutbol.Infrastructure.Services
             await _context.SaveChangesAsync();
             return torneo;
         }
+        public async Task<IEnumerable<Torneo>> ObtenerTorneos()
+        {
+            return await _context.Torneos.ToListAsync();
+        }
     }
 }

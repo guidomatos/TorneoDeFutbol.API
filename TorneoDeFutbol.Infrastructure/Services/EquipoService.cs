@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TorneoDeFutbol.Application.Common.Interfaces;
 using TorneoDeFutbol.Domain;
+using TorneoDeFutbol.Domain.Entities;
 using TorneoDeFutbol.Infrastructure.Context;
 
 namespace TorneoDeFutbol.Infrastructure.Services

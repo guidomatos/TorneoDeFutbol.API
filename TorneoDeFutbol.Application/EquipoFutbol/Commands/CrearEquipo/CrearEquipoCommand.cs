@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using TorneoDeFutbol.Application.Common.Interfaces;
 using TorneoDeFutbol.Domain;
+using TorneoDeFutbol.Domain.Entities;
 
 namespace TorneoDeFutbol.Application.EquipoFutbol.Commands.CrearEquipo
 {
