@@ -21,6 +21,8 @@ namespace TorneoDeFutbol.Infrastructure.Context
         public virtual DbSet<Equipo> Equipos { get; set; } = null!;
         public virtual DbSet<Profesion> Profesions { get; set; } = null!;
         public virtual DbSet<Torneo> Torneos { get; set; } = null!;
+        public virtual DbSet<TorneoProgramacion> TorneoProgramacions { get; set; } = null!;
+        public virtual DbSet<TorneoProgramacionDetalle> TorneoProgramacionDetalles { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -80,6 +82,26 @@ namespace TorneoDeFutbol.Infrastructure.Context
 
                             j.ToTable("TorneoEquipo");
                         });
+            });
+
+
+
+            modelBuilder.Entity<TorneoProgramacion>(entity =>
+            {
+                entity.ToTable("TorneoProgramacion");
+            });
+
+            modelBuilder.Entity<TorneoProgramacionDetalle>(entity =>
+            {
+                entity.ToTable("TorneoProgramacionDetalle");
+
+                entity.Property(e => e.FechaPartido).HasColumnType("datetime");
+
+                entity.HasOne(d => d.TorneoProgramacion)
+                    .WithMany(p => p.TorneoProgramacionDetalles)
+                    .HasForeignKey(d => d.TorneoProgramacionId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("R_44");
             });
 
 
